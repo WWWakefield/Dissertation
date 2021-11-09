@@ -1,0 +1,490 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsfonts, amsmath, amssymb, amsthm}
+
+\newtheorem{theorem}{Theorem}
+
+\usepackage{graphicx}
+
+\usepackage{url}
+
+\usepackage[margin=2cm]{geometry}
+
+\setlength{\parskip}{1em}
+
+\usepackage{setspace}
+
+\doublespacing
+
+\usepackage{mathtools}
+
+\numberwithin{equation}{subsection}
+
+\begin{document}
+\input{titlepage}
+
+
+
+
+\tableofcontents
+\section{Introduction}
+For a system to be classified as anarchic, is not equivalent to saying that it is unpredictable or chaotic. Any system with no de juris constraints can be thought of as anarchy. It can be very useful to model relationships as anarchic, the lack of constraints or oversight markedly improves the clarity of outcomes. To assume a lack of de juris, or third-party control is not an extreme measure either, the rules that govern interactions between international entities are very weak:
+"There is no common government to enforce rules, and by the standards of domestic society, international institutions are weak. Cheating and deception are endemic" \cite{axlerod}
+\par
+This dissertation will focus on deriving the optimal strategies for agents that are small in comparison to their competitors, the concept of smallness is made more robust later. The agents are competing in iterated, incomplete information allocation games or in some cases second-price all-pay auctions. I will generally characterise the conflictual activities as martial, this is not to say that this dissertation is specifically about military interaction. It will, however, be a convenient analytical tool for examining the appropriative behaviours of the entities in question. Hirschleifer states that these models can be applied to anything from Labour negotiations to redistributive taxation \cite{hirschleiferpop}. The dissertation's focal point is small agents because I believe this to be a vital area of study, most of the models presented henceforth revolve around the ability of poorer parties to fight for a more equitable distribution of income. 
+\par
+I will proceed as follows: Section 2 will address the allocative decisions of competitors in a single period, this will rely mainly on the work of Hirschleifer. Section 3 introduces multiple discrete time periods and builds a notion of a dynasties, with utility being derived from the bequest left for the next period, and the consumption in the period. The main sources of inspiration here are Grossman and Kim's papers on the predatory interactions between dynasties. I will also look at changing the assumptions we have about appropriating resources from a rival and replace them with a second-price all-pay auction system. Section 4 will complete my anthology of models, applying lessons from the previous sections and using them in a continuous time setting, finally touching on an infinite horizon dynamic process, and the ensuing de facto property rights that emerge. Section 5 examines where there could be some continuation, or more precisely added complexity in the existing models to more accurately account for the cognitive failings of groups of people. 
+
+\section{The Single Period Model}
+
+
+\subsection{Building the Model}
+Beginning with some assumptions, henceforth I will assume that there are 2 highly asymmetric competitors in the system. I will assume that the system is stable. On the definition of stability, I will be deferring to Hirschleifer, who argues that anarchy can be considered to have failed if: The per capita level of income falls below a liveable level, the eventual equilibrium state of the system being a state of tyrannical control, and finally whether it is necessary to introduce some de juris socially ordered contracts, for example property rights \cite{hirschleiferab}. 
+\par
+There are 2 competitors that are fighting over the total pool of income generated over the period. The competitors possess an endowment of resource at the start of the period from which they can derive two technologies, productive and appropriative.
+Our competitors face a onetime only allocative decision, Hirschleifer refers to this as "one-shot", whereby they will choose a fighting effort and a productive effort. In other words, how much of their resource do they invest in appropriative technologies and how much do they invest in productive technologies. The ratio of the fighting efforts between the two competitors will determine the division of the total income at the end of the period. The level of the productive effort of the competitors determines how much income there is to divide. We can write this mathematically:
+For a competitor $i$ with access to a current resource base $R_i$ \cite{hirschleiferab}:
+
+\begin{equation}
+R_{i}=a_{i}E_{i}+b_{i}F{i}
+\end{equation}
+
+Where $E_{i},F_{i}$ are the productive and fighting effort allocations. $a_{i},b_{i}$ are costs of transforming resources in to application. We call these unit conversion costs. Hirschleifer describes them in the following way, $a_{i}$ can be thought of (in the military sense) as the logistics cost coefficient. $b_{i}$ measures the resources expended in "maintaining" a worker, for illustrative purposes the invention of the railroad would have reduced this parameter \cite{hirschleiferab}.
+Much of Hirschleifer's work uses the corresponding intensities $e_{i},f_{i}$ of each activity, it is a notational formality that will save time later:
+
+\begin{equation}
+e_{i}=E_{i}/R_{i}
+\end{equation}
+
+\begin{equation}
+f_{i}=F_{i}/R_{i}
+\end{equation}
+
+subject to:
+
+\begin{equation}
+a_{i}e_{i}+b_{i}f_{i}=1
+\end{equation}
+
+The relative conflictual success of a certain contestant $i$ is measured by $p_i$. Using most of the setup from \cite{hirschleiferab}, I will however change the model here slightly and instead say that the resource base itself is immune from attack, it is only income generated during the period that is at stake here, this is inspired by \cite{hirschleiferpop}. Where, $I=A(E_1+E_2)$, $A$ is the total productivity index, this increases over time reflecting the effect of technological advancement in production. The income derived from conflictual activity is as follows:
+\begin{equation}
+I_1/I_2=p_1/p_2
+\end{equation}
+
+\begin{align}
+I_1=p_1I\\
+I_2=p_2I\nonumber
+\end{align}
+\par
+Probably the most central equation to anarchic viability is the Contest Success Function (CSF):
+\begin{equation}
+\frac{p_1}{p_2}=(\frac{F_1}{F_2})^m
+\end{equation} 
+equivalently, 
+\begin{equation}
+p_1=\frac{F_1^m}{(F_1^m+F_2^m)}
+\end{equation}
+Substituting for equations $(5)$ and $(6)$:
+\begin{equation} 
+I_1/I_2=(F_1/F_2)^m=(f_1I_1)^m/(f_2I_2)^m \rightarrow f_1^mI_1^{m-1}=f_2^mI_2^{m-1} \rightarrow p_1/p_2=(f_1/f_2)^{m/(1-m)}
+\end{equation}
+This gives us a fundamental condition for the viability of anarchy, $m$ is called the mass effect, or decisiveness parameter. In an anarchic scenario $m\leq1$, We will apply this condition when looking at other papers. The existence of this constraint is both realistic and obvious, if $m>1$ then the returns to fighting are too high and the system will descend into a state of all-out war where the larger competitor is able to trample the smaller one \cite{hirschleiferab}. Although this is philosophically acceptable as a state of anarchy according to Hobbes, it is not an economically acceptable system. Given that Hobbes believes that "perpetual war" creates a leviathan this is clearly in violation of our condition: tyrannical control is unacceptable.
+Finally, competitors in this system seek to maximise their per capita income:
+\begin{equation}
+Y_i=E_i^h=(e_iR_i)^h
+\end{equation}
+where $h$ is the "productive scale parameter". Our competitor’s return to productive efforts is determined by $h$. Since we are only looking at two players at that point, we can treat them in the classical economic sense as a duopoly. Hirschleifer decides to use Cournot assumptions: Each contender will choose their own fighting intensity based on the level of fighting intensity of their competitor in the last period, on the assumption that the competitor will not change theirs. 
+
+
+\subsection{Tactics under base assumptions}
+The agents in this model are facing a constrained optimisation problem. How do they most optimally distribute their resources in order to derive the most income at the end of the period?
+We can look to figure 1 for clarity \cite{hirschleiferpop}:
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=.4]{fig2.jpg}}
+\caption{Graph of the effect of changing resource allocations}
+\label{fig}
+\end{figure}
+The upper right quadrant and bottom left quadrant of this graph represent the potential allocations of resource for competitors 1 and 2 respectively. Ranging from entirely conflictual to entirely productive, with the constraint being the original endowments $R_1,R_2$. The upper left quadrant shows the proportion of income obtained by competitor 1 as a consequence of the fighting intensity decided upon by both competitors. The bottom right quadrant shows the income available for redistribution. 
+\par
+To begin to build an idea of which tactics (choices of resource allocation) are optimal, we need to derive the reaction curves of the competitors. We can write competitor 1's optimisation problem as follows \cite{hirschleiferpop}:
+\begin{align}
+\text{Max}I_1=p_1(F_1\mid F_2)\times I(E_1\mid E_2)\\
+\text{subject to} E_1+F_1=R_1\nonumber
+\end{align}
+Substituting $I=A(E_1+E_2)$, and $p_1=\frac{F_1^m}{(F_1^m+F_2^m)}$ we can solve for the reaction curves:
+\begin{align}
+\frac{F_1}{F_2^m}=\frac{m(E_1+E_2)}{F_1^m+F_2^m}\\
+\frac{F_2}{F_1^m}=\frac{m(E_1+E_2)}{F_1^m+F_2^m}\nonumber\\
+\text{for},s=1\nonumber
+\end{align}
+Note Bene, $A$ has been cancelled out, which implies that under these conditions, the Cournot equilibrium will not change as productive technology becomes sufficiently advanced \cite{hirschleiferpop}. 
+\par
+We can calculate a Cournot equilibrium at the point that the reaction curves meet, we must make the assumption that $m=1$ in order to find a convenient solution, I posit that this is acceptable because it is the worst-case scenario that a small competitor can find itself in within a stable anarchic system. Therefore, an observable good strategy here implies that there exists a calculable favourable strategy everywhere that the system is stable. The Cournot solution for symmetrical endowments is just the point at which fighting and prductive effort are equal, in the asymmetrical case the devision of endowments is also very simple: 
+\begin{equation}
+F_1=F_2=\frac{(R_1+R_2)}{4}
+\end{equation}
+This Cournot solution leads to a surprising redistributive result that is known as The Paradox of Power \cite{hirschleiferpop}, we can show this redistribution with the following numerical example from Hirschleifer's seminal paper: With $A=m=s=1$, let the initial resource distribution be $(R_1,R_2)=(200,100)$ at Cournot equilibrium $F_1=F_2$, and $F_1+F_2=1/2(R_1+R_2)$ $(F_1,F_2)=(75,75)$. leaving $(E_1,E_2)=(125,25)$ but since fighting levels are equal then the final distribution of income is also equal: $(I_1,I_2)=(75,75)$.
+\par
+It is also obvious that as the parties become more and more asymmetrical that the smaller competitor will no longer be able to match the fighting level of their larger neighbour. As the size of competitor 2 gets relatively very small then we can see from equation 2.1.6 that $\frac{\partial I_2}{\partial E_2}$ also gets very small, tending to zero with $R_2$. However, $\frac{\partial I_2}{\partial F_2}$ stays positive, meaning that as a competitor gets relatively tiny conflict becomes enormously more attractive. In other words, the larger neighbour will take all the income produced by the smaller side, however any fighting effort at all will earn them a slice of the overall $I$ (their joint productive effort). This is what leads the smallest groups to be entirely, and logically predatory. Afterall if you are going to be taxed of everything you produce, why produce at all. We refer to this as a corner solution and it is mathematically valid, Hirschleifer states that the point at which a competitor logically becomes entirely predatory is given by:
+\begin{align}
+\rho^*=\frac{R_1}{R_2}=\frac{(2+m)}{m}\\ 
+\text{since}, m=1\nonumber\\
+\rho^*=\frac{R_1}{R_2}=3\nonumber
+\end{align}
+In other words, a competitor is pushed in to pure predation when their underlying resource base is 1/3rd that of their opponent.
+\par
+Hirschleifer espouses two versions of the POP, the strong law, and the weak law. 
+The strong law: In mixed conflict-cooperation interactions, the contending parties will end up with identical incomes, regardless of initial distribution. 
+The weak law: In mixed conflict-cooperation interactions, the contending parties will end up with less dispersed incomes than the initial distribution.
+\par
+Whether the strong law or the weak law holds depends on $s$ and $\rho^*$, since we're assuming that $s=1$ and that $m=1$ we can ignore this condition and say the following: as long as one competitor is no smaller than 1/3rd the size of the large competitor then the strong law applies. 
+\par
+In sum, in this single period model the optimal strategy for the smaller competitor in an asymmetric conflictual relationship is simple, they should match the fighting effort of their larger competitor, unless they are sufficiently small that they cannot. At this point they should become entirely predatory, deriving all their income from appropriative activity. 
+
+\section{Introducing multiple discrete time periods}
+\subsection{The Multi-Period Model}
+I shall turn to Grossman and Kim to provide the basis of this with their treatise on asymmetric dynastic relationships, Predation and Accumulation. Their model is as follows:
+\par 
+Let us consider a system operating in discrete time, with timestep: $t$, at each successive time $t$ a new generation is born. The new predator generation receives a wealth endowment $\omega_t$, from the previous generation. The Prey generation receives $\Omega_t$ from theirs. 
+\par
+The dynasties then face the aforementioned one-shot choice over their allocation of resources. The predator chooses how much they should spend on appropriation and the prey decide the degree to which they should defend themselves. It is assumed that if the prey dynasty invests a suitable amount that they can deter predation all together, because they can make the act of predation so expensive that the opportunity cost in terms of the production of consumables is too high. 
+\par
+The potential prey dynasty receives: $\Omega_t$, Consumes: $C_t$, allocates: $K_t$ to production and, $G_t$ to defensive fortifications. 
+The Prey dynasty allocates these resources as follows:
+\begin{equation}
+\Omega_t=C_t+K_t+G_t 
+\end{equation}
+subject to: $C_t\geq0,K_t\geq0,G_t\geq0$.
+\par 
+The predator dynasty can allocate:
+\begin{equation}
+\omega_t=c_t+k_t+g_t 
+\end{equation}
+subject to: $c_t\geq0,k_t\geq0,g_t\geq0$
+\par
+The predator has similar constraints and expenditures; however, we assume that they make their allocative decisions only after observing how their prey are allocating their resources. 
+\par
+We will assume that the dynasties productive endeavours are independent but that they receive the same rate of return on their productive investment. We also assume that no appropriative or defensive technology is useable beyond one period and that it has no scrap value. Grossman and Kim encourage us to think of this predation as a tax payable at the end of the time period, the proportion of productive effort retained by the prey dynasty could be thought of as a measure of how secure their property is. We denote this fraction $P_t$:
+\begin{align}
+P_{t} = \begin{cases*}
+1-X_t, & if $0\leq X_t<1$,\\
+0, & otherwise.\\
+\end{cases*}\\
+\text{for}, X_t \geq 0
+\text{and}, X_t=\Theta \frac{g_t}{G_t}\nonumber
+\end{align}
+$X_t$ measures the relative offensive strength of the predator and $\Theta$ is a positive constant that measures the relative effectiveness of offensive weapons against defensive weapons. It is a well-known military maxim that it takes odd of 3:1 to attack a defended position, this is a parameter reflecting this asymmetry. 
+\par 
+Grossman and Kim further introduce the constraint that the resource appropriated by the predator may be less valuable after conflictual activity "predation has the potential to be destructive", This may be from, inter alia: the destruction of the resource during conflict or deterioration during transport. This is measured by $0\leq\beta\leq1$ so the predator gains $(1-\beta)(1-P_t)$ of the prey dynasties gross production at the end of the period. Therefore, the next generation of the dynasty will receive: 
+\begin{equation}
+\omega_{t+1}=ak_{t}+(1-\beta)(1-P_t)aK_{t}
+\end{equation}
+where $a\geq1$ is the production scale parameter, to an extent this can be taken to be the inverse of Hirschleifer’s unit conversion cost. It still reflects how effective the agents are at producing a good. Thus $a(K_{t}+k_t)$ gives us the total production in period $t$. 
+The wealth endowment received by the next generation of the prey dynasty is:
+\begin{equation}
+\Omega_{t+1}=P_taK_t 
+\end{equation}
+\par
+As with Hirschleifer it is useful for Grossman and Kim to develop an objective function, to tell us what exactly it is that the agents want to maximise. They decide that each generation of the dynasties derive utility from the same two thing, a function of: the consumption in the period and the wealth that they can leave for the next period. 
+\par
+In the case of the predator: 
+\begin{equation}
+z_t=u(c_t)+v(\omega_{t+1})
+\end{equation}
+\par In the case of the prey:
+\begin{equation}
+Z_t=U(C_t)+V(\Omega_{t+1})
+\end{equation}
+\subsection{Enforced Prey Behaviour}
+In the papers by Grossman and Kim that derived the model that we are using for this section one party is forced to behave as the prey and the other to be the predator, to begin with let's examine this as if the smaller competitor is destined to play the part of our prey dynasty. The reason why one party may be forced in to being the prey is that they possess a resource that is highly desired by the predator, or the property of the predator is invulnerable. I will revisit this when our smaller competitor is playing the role of the predator, for now I will leave that as an unqualified assumption.
+\par
+The behaviour of the large agent, the predator, is highly significant here: 
+\par
+The resource allocation of the predator, given our assumptions is simple, and to begin with we will assume that the predator can be either entirely predatory or entirely productive, depending entirely on how the prey defends themselves. If there is more to be gained appropriately then each extra unit of the resource net of consumption will be channelled in to conflictual activity, meanwhile if there is more to be gained from production then technologies of appropriation will be favoured. Under what circumstances is appropriation the more productive method: We need to look at the marginal increase in the bequest to the next generation given a unitary change in productive capital or weaponry. We have discussed already the effect of an extra unit of productive capital, it is captured by our parameter $a$. An increase in weaponry by one unit will yield an increase in the inheritance of the next generation by $(1-\beta)\frac{\Theta}{G_t}aK_t$. since $a\geq1$ we can boil this down to the following condition: 
+\begin{equation}
+G_t\geq(1-\beta)\Theta K_t
+\end{equation}
+if this condition is satisfied then the prey has deterred predation for the period. The opportunity cost of predation is simply too high.
+\par 
+In this case the predator only has to choose between consumption and production, in order to maximise $z_t$:
+\begin{align}
+\omega_{t+1}=ak_{t}+(1-\beta)(1-P_t)aK_{t}\\
+\text{since there is no conflict}\nonumber\\
+\omega_{t+1}=ak_{t}\\
+k_t=\omega_t-c_t, \text{and} g_t=0\\
+z_t=u(c_t)+v(\omega_{t+1})\\
+\text{choosing $c_t$ such that}\nonumber\\
+\frac{\partial z_t}{\partial c_t}=u'(c_t)-av'(\omega_{t+1})=0
+\end{align}
+
+
+\par
+If this condition is not satisfied i.e. $G_t<(1-\beta)\Theta K_t$, then by the same logic $z_t$ is maximised by:
+\begin{equation}
+\frac{\partial z_t}{\partial c_t}=u'(c_t)-(1-\beta)\frac{\Theta}{G_t}aK_tv'(\omega_t+1)=0
+\end{equation}
+To simplify further analysis Grossman and Kim make the assumption that:
+\begin{align}
+u(c_t)=\log(c_t) \nonumber\\
+v(\omega_{t+1})=\log (\omega_{t+1})
+\end{align}
+This simplifying assumption allows us to say the following; from $\frac{\partial z_t}{\partial c_t}=u'(c_t)-av'(\omega_{t+1})=0$ and the log assumptions of this section, it doesn't matter what the values of $g_t,k_t$ are the maximising quantity of consumption is:
+\begin{equation}
+c_t=\frac{\omega_t}{2}
+\end{equation} 
+Using this invariant quantity of $c_t$ it obviously allows us to give more concrete allocations of resource to weaponry and production: 
+
+\begin{align}
+k_{t} = \begin{cases*}
+\frac{\omega_t}{2} & if $G_t\geq(1-\beta)\Theta K_t$,\\
+0, & otherwise.\\
+\end{cases*}
+\end{align}
+
+\begin{align}
+g_{t} = \begin{cases*}
+\frac{\omega_t}{2} & if $G_t<(1-\beta)\Theta K_t$,\\
+0, & otherwise.\\
+\end{cases*}
+\end{align}
+So how does the prey dynasty choose to behave. Is it profitable for them to deter predation? Indeed, is it even possible for them to have an acceptable strategy or do they just get crushed by their superior competitor. We must interrogate the relative merits of appeasement and conflict, in order to find out their ideal resource allocation. The Prey has a more complicated optimization problem, instead of merely reacting to stimulus, they have to consider how their actions will affect the behaviour of the predator and in turn how much of their resource they may have to give up. By analogous methods to finding the local maxima of the allocation problem faced by the predator: 
+\begin{align} 
+G_t=(1-\beta)\Theta K_t\\
+\frac{\partial Z_t}{\partial C_t}=U'(C_t)-\frac{a}{1+(1-\beta)\Theta}V'(aK_t)=0\\
+K_t=\Omega_t-C_t-G_t
+\end{align}
+This is the condition under which predation is deterred and it is often referred to as $Z_t^*$. $G_t=(1-\beta)\Theta K_t$ is the lowest possible defensive value at which predation is deterred. The consumption of the dynasty given this strategy is given at the point that the marginal utility of consumption is equal to $C_t=\frac{a}{1+(1-\beta)\Theta}$ times the marginal utility of the bequest to the next generation. This comes easily from equations 12-14. It is also possible that there exists a second local maximum of $Z_t$, where predation is tolerated. The following conditions must be satisfied: 
+\begin{align}
+\frac{\partial Z_t}{\partial G_t}=(-P_ta+\frac{\partial P_t}{\partial G_t}aK_t)V'(P_taK_t)=0\\
+\frac{\partial Z_t}{\partial C_t}=U'(C_t)-P_taV'(P_taK_t)=0\\
+K_t=\Omega_t-C_t-G_t\\
+\text{and}, \Theta\frac{\omega_t}{2}<G_t<(1-\beta)\Theta K_t
+\end{align}
+\par
+A solution of this type will exist in the scenario that the positive marginal effect on the bequest to the next generation of increasing $G_t$ is exactly equal to the negative marginal effect of the decrease in $K_t$. When this is the case the prey dynasty should chose the level of consumption at which the marginal utility of consumption is $P_ta$ times the marginal utility of the bequest, it is trivial to show that this is the point at which utility is maximised. If conditions 15 through 18 are not satisfied, then the global maximum is found with deterrence. In the case that both local maxima exist then the values of $Z_t^*,Z_t$ are compared, the larger of the two indicates the superior strategy.
+\par
+Grossman and Kim go on to say that even in situations where the prey dynasty can do better when tolerating predation that there will come a time where this strategy is no longer possible.
+It is simple to show that over time when predation is tolerated the ratio of the wealth of the two dynasties becomes large in favour of the predator. So large in fact that the security of the prey’s property becomes tenuous enough that something must be done. From this discrete point the prey dynasty will allocate sufficient resource to defence such that it is totally secure, a form of de facto property rights which is a theme that we will revisit. However, it is worth remembering that this toleration of predation is only effectual when the dynasties are of similar size
+\par
+All this has an interesting effect on the accumulation of productive capital within the prey dynasty. It is simple to show that the accumulation of productive capital decreases in line with successive generations suffering from reductions in property security. However, when property rights become sufficiently eroded that predation is no longer tolerated, we do not see an uptick in the accumulation of productive capital, in fact the converse is true. We find that the accumulation of productive capital is slower than in any previous generation that chose to tolerate predation. The best strategy for the prey dynasty follows directly from this result: They will take a tolerant approach till such a time as to be inefficient, and only then to fully fortify is the prey dynasties best strategy. Grossman and Kim refer to the great wall of China as a historical example of such extreme action. Beyond this point it is no longer worthwhile for the predator dynasty to even try to appropriate resource. Since we are assuming that our prey dynasty begins as the smaller of the two it is highly unlikely that they will tolerate predation at any point.
+\par 
+There are some assumptions that Grossman and Kim use that I am sceptical of, for example the predator choosing to be entirely appropriative or entirely productive, the maximising solution is likely to be found somewhere between the two in reality.
+\subsection{Enforced Predatory Behaviour}
+\par 
+In the last section it was impossible for the smaller team to engage in predation, the property of the smaller competitor was highly vulnerable which forced them to protect it. Now we will also relax the assumption that one must put some effort in to only production or to live a purely predatory existence. We also assume that the resource base of the smaller competitor is invulnerable. This is a condition that I would like to dig in to, as it seems more counter-intuitive than when we made the same assumption with the larger competitor.
+\par
+Grossman and Kim posit that this might be the case because the resource possessed by the smaller predator may be useless to their prey or that it is "simply invulnerable"\cite{grossmanp} by construction. I want to add a further reason which is that the contestants aren't playing on an even playing field in terms of the type of anarchy. In Anarchy and Its Breakdown Hirschleifer states that biologists recognise 2 forms of anarchy, scramble, and interference. An interference system is often used to characterise human behaviour, there are resources to be captured and controlled. A scramble situation is one where resource is "fugitive in space and time"\cite{hirschleiferab}, it must be seized upon when it's there, but it cannot be captured and controlled. My lemma is the following: A small unit can behave as a predator when they act in a way that is characterised by a scramble system and their potential prey behaves in a way that fits with the description of an interference-based system. 
+Grossman and Kim use the Mongols as an example as a purely predatory band, the Mongol empire is the largest to ever exist. The Mongols were nomadic, they didn't try and capture or control any resource bases, they were fugitive in time and space and they took what they could when they could. 
+\par
+Perhaps this is better explained in the biological context which we have alluded to before, predators have small sharp teeth, short necks, and eyes mounted far forwards in their heads. These genetic factors make it very difficult indeed for them to adopt a more herbivore existence. Predators come in large and small forms, as does their prey. It is the intrinsic characteristics of a small team that determine whether or not they can act as an appropriative entity, not their size.
+\par
+Grossman and Kim address the smaller competitor acting as a predator in Predation and Production, which was a follow up to Predation and accumulation, however they drop from their second paper the idea of the competitors being dynastic and restrict their analysis to one period. I am going to endeavour to twist their model to allow for multiple time periods. 
+\par
+At the beginning of a time period the prey receives a bequest from the previous generation denoted $\Omega_t$ as before and the predator receives a bequest from their previous generation $\omega_t$ carrying forwards the notation that we used before. 
+\par
+The prey can devote its endowment to defensive fortification $G_t$, and productive capital $K_t$. Such that, $\Omega_t=G_t+K_t$ Similarly, the predator can allocate its endowment to offensive weaponry $g_t$, and to productive capital $k_t$. Such that, $\omega_t=g_t+k_t$. As before the fraction of their endowment that the prey retain is a measure of the security of it's property, again we denote this fraction $p$, where:
+\begin{align}
+p=\frac{1}{1+x}\\
+\text{and}, \nonumber\\
+x=\Theta\frac{g_t}{G_t}\nonumber
+\end{align}
+\par
+$x$ is a homogenous function degree $r>0$ in $\frac{g_t}{G_t}$, where $r$ is analogous to Hirschleifer's mass effect parameter. Hence, in our specific anarchic case we can assume $x$ to be a homogenous function of degree 1. N.B. $x$ varies positively with $\Theta$, which Grossman and Kim use to evaluate the relative strength of offensive weapons on defensive technologies. A logical consequence of conflictual activity is the destruction of valuable resources. This is a major difference from Hirschleifer to Grossman and Kim. Hirschleifer does not allow the possibility of "predation being destructive" as Grossman and Kim do, because it is only income that is at stake in his paper, where Grossman and Kim allow everything other than income, which they define as "consumables", to be subject to appropriation. We say this explicitly: The Predator will gain less than the prey loses. Although the prey loses $1-p$ of its endowment this is subject to an attenuation $\beta$, meaning the predator only gains $(1-\beta)(1-p)$,$0\leq\beta\leq1$. Therefore, the final wealth of the parties is:
+\begin{align}
+\text{Prey:}\\
+\Omega_{t+1}=p\Omega_t\nonumber\\
+\text{Predator:}\\
+\omega_{t+1}=\omega_{t}+(1-\beta)(1-p)\Omega_t\nonumber
+\end{align}
+The objective of the teams in this model is to maximise the sum of its production of consumables and the bequest to the next generation:
+\begin{align}
+v_t=ak_t+\omega_{t+1}\\
+V_t=aK_t+\Omega_{t+1}\nonumber
+\end{align}
+Grossman and Kim go on to explain how a competitor might be rationally motivated to not engage in conflictual activity of any kind, to engage in mixed productive and conflictual activities or finally to be a pure predator. The conditions for being a pure predator are dependent on the efficacy of weaponry, how destructive the act of predation is and lastly the relative size of the competitors $\frac{\Omega_t}{\omega_t}$.
+\par
+From \cite{hirschleiferpop} we will assume that our predator is small in comparison to its prey, and due to its size, it is also likely to be purely predatory. Does the introduction of a level of destruction through predation, and the possibility of an increase in the efficacy of defensive weaponry mean that small teams can no longer be maximally efficient when acting in a purely predatory way? 
+The marginal returns to fighting of this proposed corner solution to the maximisation problem is, according to Grossman and Kim:
+\begin{equation}
+\frac{dv_t}{dG_t}=-(1-\beta)\frac{\partial p}{\partial G_t}\Omega_t-a\leq0
+\end{equation}
+by taking the partial derivative w.r.t. g of equation 1 of this subsection Grossman and Kim obtain the following condition for when a purely predatory strategy is logically motivated:
+\begin{equation}
+\sqrt{(1-\beta)\frac{\Omega_t}{a}\frac{G_t}{\Theta}}-\frac{G_t}{\Theta}\geq\omega_t
+\end{equation}
+\par
+We can see that this is a function that varies positively with the size of the prey, therefore it is possible that in the case where the prey is infinitely larger than the predator that pure predation is still logical. Fortunately, Grossman and Kim provide a much more concrete answer to the minimum the ratio of sizes has to achieve, however pure predation can be acceptable at size discrepancies smaller than this depending on how the prey dynasty chooses to allocate its resources. 
+\begin{equation}
+\frac{\Omega_t}{\omega_t}\geq\frac{4a}{1-\beta}
+\end{equation}
+\par 
+The prey allocates its efforts to defence in the knowledge that the predator's allocation of it's endowment into appropriative technology is predicated upon the size of $G_t$. Given that we are assuming that the ratio $\frac{\Omega_t}{\omega_t}$ is large in comparison to $a,\beta,\Theta$ Grossman and Kim state that the prey will only allocate limited resources to defence. The point that the marginal utility of defence equals the marginal cost at the point: 
+\begin{align}
+\sqrt{\Theta\omega_t\frac{\Omega_t}{a}}-\Theta\omega_t\\
+\text{if and only if},\frac{\Omega_t}{\omega_t}\geq N\nonumber
+\end{align}
+Where N characterises our condition that the ratio of the sizes is sufficiently large. The relationship between $\beta$ and $\Theta$ is a nice way of expanding on the concept of the decisiveness of conflict discussed by Hirschleifer as the beta acts as an attenuation on theta, allowing for the creation of incredibly destructive appropriative technology (I shy away from the word ‘weaponry’ for the sake of generality) while maintaining a rationally motivated strategy that falls short of tyrannical exploitation. For this reason, N is conditioned on $\beta$ and $\Theta$, N becomes significantly larger if the weapons are too effective in relation to how little destruction they cause, and as a result the conditions under which an entirely predatory entity can exist become a lot tighter, as the prey becomes far more motivated to dissuade predation. For the sake of this dissertation we will assume that $2(1-\beta)\Theta\leq1$ therefore:
+\begin{equation}
+N=a\Theta[\frac{1+\sqrt{1-(1-\beta)\Theta}}{(1-\beta)\Theta}]^2
+\end{equation}
+Again, for the sake of this dissertation we will assume that the first couple of generations certainly satisfy this condition.
+In sum, the allocation of resources to defensive effort depends on two things, the parameter values and the relative sizes of the competitors. Given the assumptions that we've made about the starting size of the dynasties we will say that the rational response of the prey to an entirely predatory entity much smaller than itself is to tolerate its predation to a certain degree in order that it can continue to focus its efforts on production and maximise both its consumption and its bequest to the next generation. 
+\par
+Thus far I have talked grandly of the Mongol empire and international conflict, I have already stated that this is a good way of characterising many disputes but here is an example of a dispute that is easier to imagine in the realm of finance. A publicly traded company does not concern itself overmuch with hedge funds and investment banks trying to make money off fluctuations in its stock price, the marginal utility of fighting them is small, it is better off trying to create as much value as possible. 
+\par
+What will happen over successive periods of this kind of predation depends on whether the paradox of power continues to apply here. The strong law cannot be due to the relative size of the dynasties exceeding $\rho^*$ but the weak law might mean that in each successive period there will be a degree of redistribution in the endowments of the dynasties. At some point when the ratio of the relative endowments becomes smaller than $N$ there will be a sudden change in the strategy of the predator dynasty, and they will begin to invest in production. From this point forwards the strong law of the paradox of power may apply. The strong law will not be binding if the competitors are fighting over resource due to the $\beta$ parameter, it is however applicable if the conflict is over a common pool of income. The dynasties will no longer fluctuate in relative size as they will have reached a logical equilibrium of part time predation. The only way for the dynasties to reach a non-aggressive equilibrium is if the relative strength of offensive weaponry falls, ceteris paribus. 
+\par
+The other option is that the weak law of the paradox of power fails to apply because the destruction caused by offensive weapons is too great or the predator dynasty is unable to make sufficient use out of the captured resources to reduce the bias on the final distribution of income, if this is the case then the predator will be logically motivated to be a pure predator for infinite generations, unless ceteris paribus there is a sudden drop in the relative efficacy of offensive weapons, at which point there will be a non-aggressive equilibrium in which the smaller dynasty becomes a subsistence entity. 
+\par
+I would argue that both of these situations have happened in history and that they were indeed caused by the relative efficacy of conflictual technologies. If the predator has highly effective appropriative technology that has a small destructive effect and the prey has a very large resource base, then the predator is going to be entirely appropriative, and its economic welfare will be impressive. It is not hard to look at history and see concrete examples of people facing these conditions and behaving exactly as expected, inter alia: the Mongols and their recurve bows or the Vikings and their longships\cite{grossmanp}.
+\par
+I have adopted a philosophy of catastrophizing the size of the smaller unit. For completeness, and it has been implied above, 
+it is more likely that the smaller party is not dwarfed but merely slightly poorer. The strategy of a competitor of this type on a period-by-period basis (provided that we have reasonable assumptions on the relative effectiveness of appropriative technologies) is bound by the weak law of the P.O.P if the conflict is predicated entirely on the appropriation of base resouce, or the strong law if it relates strictly to income.
+\par
+Thus far I have analysed the possible actions of a small competitor in a static setting using base assumptions, and then using a combination of Hirschleifer and Grossman's papers and conclusions I laid out a dynamic model of a highly asymmetrical relationship between 2 parties and concluded that purely predatory behaviour was the best course of action until such a time that the ratio of the distribution of income between the two parties reaches $N$. This had the caveat that the resource base of the predator be invulnerable from attack, which forces the relationship between the two parties to remain constant: one of them the predator and one of them the prey. Although there are plenty of situations where this is the case it seems to be more of a matter of circumstance than of choice, therefore it may be desirable to derive a model which is dynamically evolving without a fixed position of predator and prey. 
+\subsection{Wars of Attrition}
+In 2006 Hafer published a paper on the emergence of de facto property rights in the state of nature. This was a departure from the Hobbesian assumptions of Hirschleifer et al... Hafer pioneered a new, 2-dimensional method of characterising competitors and used auction theory to describe their attritional conflictual relations over indivisible parcels of land. 
+\par
+Hafer characterises the two-dimensional agents by their marginal in creating goods $\alpha$ and $\beta$, to do this they use technologies A and B respectively, A requires that the agent wins the war of attrition as it requires both land and labour. B only requires labour. 
+\par
+The war of attrition itself is a form of incomplete information auction, it is unusual in the sense that the winner only pays the losers bid. Afterall they will not keep fighting after the loser quits. This kind of auction is known as a: second-price all-pay auction. As a matter of academic interest Hirschleifer wrote a paper on this auction type that is considered in part the basis for the whole field of contest theory. In the auction the agents bid their time, the more time they bid the less time they have to allocate to productive activities after the war ends. This a complete departure from the CSF, where the levels of fighting effort decide the division of resource or income. 
+\par
+There is a distribution of types of competitor, each competitor is aware of what type of competitor he is and has a belief about what the agent their biding against is. In a finite time, game at every point in in time $t$ an agent $i$ chooses to commit a unit of time based on whether they believe that probability their opponent will quit in the next period times the benefit of having land times the remaining time is greater than the opportunity cost of the unit of time. Explicitly, for contender $i$: 
+\begin{equation}
+\frac{Pr(s_j=t)}{Pr(s_j\geq t)}(\alpha-\beta)(4-t)\geq \beta
+\end{equation}
+Notice that this is monotonically increasing in $\frac{\alpha-\beta}{\beta}$ therefore the winner of the bidding war, in the symmetric case, is the agent with the higher value of this ratio \cite{hafer}.
+\par 
+Hafer sets up the following discrete example: 
+\par
+Each agent is endowed with 4 units of time. An agent i's possession of land is indicated by $l_i=1$, where $l_i\in\{0,1\}$. The agent's type is characterised by the vector:
+\begin{equation}
+(\alpha_i,\beta_i)\in\{2,5\}\times\{1,3\}
+\end{equation}
+Recall that our competitor $i$ has beliefs bout competitor $j$, these beliefs are defined in this discrete case as: 
+\begin{align}
+Pr(\alpha=2)=\frac{3}{4}=p\\
+Pr(\beta=1)=\frac{1}{5}=q\nonumber
+\end{align}
+So using our function 3.4.1 we can determine how a competitor would allocate their time. For example in the first period no agent of a type $\beta>\alpha$ would commit any time at all, in this example the only competitor who won't compete at all is $(2,3)$, who also happens to be the most likely opponent. Therefore the competitor of the type $(5,3)$ will devote 1 unit of time in the hopes he is facing his most likely foe $(2,3)$ however he will not bid any higher than this as his other 2 possible competitors $(2,1),(5,1)$ will both bid higher than is productive for him. Therefore we say that $s(5,3)=1$ i.e. the optimal strategy for a competitor of this type is to bid one unit of time. Mathematically this is shown \cite{hafer}:
+\begin{equation}
+\frac{Pr(5,3)}{1-Pr(2,3)}(\frac{5-3}{3})(4-2)=\frac{2}{3}<1
+\end{equation}
+Therefore, they will not bid another unit of time. 
+\par
+Since we are interested in the smaller competitor we shall in this case presume that the smaller competitor is the one with the lowest sum of productive capacity. In this case it is $(2,1)$, It is simple using the steps above to calculate $s(2,1)=2$ this means that it will certainly win the war of attrition against $(2,3),(5,3)$ and it will only lose against $(5,1)$ since $s(5,1)=3$, however $(5,1)$ is a highly unlikely pairing. All of this to say that in this game our smaller competitor will always be out produced by the other agents but that it is highly unlikely that they will not be able to carry out their best strategy. In fact, the best outcome for every agent $i$ is just to bid their optimal strategy. Unfortunately this does not lead to an optimal distribution of resource, this is evident here by $s(2,1)>s(5,3)$, however $(5,3)$ would produce more with the same land, the total production when $(2,1)$ is in control of the land is 5 units, compared to 6 units when $(5,3)$ is. 
+\par
+Thus far we have analysed anarchic relationships as a series of games, in step time. \cite{hafer} Provides a method by which we can allow the model to operate in continuous time.
+
+\section{Attritional Warfare in Continuous Time} 
+\subsection{The One Shot Model in Continuous Time}
+Now that we are operating in continuous time, we have to make certain edits to the model previously presented. $\alpha$ and $\beta$ are now independently distributed over the intervals $[a,b]$ and $[c,d]$ respectively, they have probability densities:
+\begin{align}
+p(a)=\frac{1}{b-a}\\
+\text{and,}\nonumber\\
+p(b)=\frac{1}{d-c}\nonumber
+\end{align}
+Hafer imposes the following conditions on the marginal productivities:
+\begin{align}
+a\leq c\nonumber\\
+b>d\nonumber
+\end{align}
+In terms of time that is allocated to each activity, it is no longer unitary, rather the agents are given an amount of time $T$. They can spend any amount of time $t\in(0,T)$ on conflictual activity, leaving $(T-t)$ for production. Hafer represents this mathematically as:
+\begin{align}
+A(\alpha,t,l)=\alpha l(T-t)\\
+B(\beta,t)=\beta(T-t)\nonumber
+\end{align}
+Therefore, the payoff for an agent $i$ in a war of attrition with competitor $j$ is:
+\begin{align}
+\mu_{i} = \begin{cases*}
+\beta_i(T-t_i), & if $t_i<t_j$,\\
+\alpha_il_i(T-t_j), & if $t_i>t_j$.\\
+\end{cases*}
+\end{align}
+The maximum time acceptable to agent $i$, given $p(t)$ the probability that competitor $j$ quits at time t \cite{hafer}, satisfies:
+\begin{equation}
+t_i\in arg max(Pr(t_j>t_i)[\beta_i(T-t_i)]+\int_{0}^{t_i}p(t)[\alpha_il_i(T-t)] \,dt )
+\end{equation}
+Letting $t(\alpha,\beta)$ be the symmetric Bayesian equilibrium and $p(\alpha,\beta)$ be the expected probability density of types, Hafer rewrites agent $i$'s optimisation problem: 
+\begin{equation}
+\max\limits_{t_i}(Pr((\alpha_j,\beta_j):t(\alpha_j,\beta_j)>t_i)[\beta_i(T-t_i)]+\int_{0}^{t_i}Pr((\alpha_j,\beta_j):t(\alpha_j,\beta_j)=t_i)[\alpha_il_i(T-t)] \,dt)
+\end{equation}
+The first order condition \cite{hafer}:
+\begin{equation}
+Pr((\alpha_j,\beta_j):t(\alpha_j,\beta_j)=t_i)[\alpha_il_i(T-t_i)-\beta_i(T-t_i)]-\beta_iPr((\alpha_j,\beta_j):t(\alpha_j,\beta_j)>t_i)=0
+\end{equation}
+Since there are infinitely many values for $(\alpha,\beta)$ that correspond to any given $t$ the symmetric strategy cannot be found from this expression, we need an expression that relates $\alpha$ to $\beta$ along level curves of $t$, Hafer claims that we have already discussed such an expression before and that it is exactly what we need now: The ratio of the extra per unit revenue gained by controlling the land to the opportunity cost of obtaining it. Hafer denotes this ratio, $k$: 
+\begin{equation}
+k_i=k(\alpha_i,\beta_i)=\frac{\alpha_i-\beta_i}{\beta_i}
+\end{equation}
+This property allows Hafer to construct a unique solution for the Bayesian equilibrium strategy:
+\begin{equation} 
+s_i\in argmax Pr((s(k)>s_i)(T-s_i)+\int_{\{k_j:s(k_j)<s_i\}}p(k)[(k_i+1)(T_s(k))\,dk))
+\end{equation}
+where $s$ denotes the strategy as in the discrete time case. 
+\par
+This model divides land by who has the greater ratio $k$, this is not particularly efficient, nor is there much strategy involved. When it comes to strategy in auctions the answer is quite simple, bid what you think it is worth to you. In that sense the people who want the land more are the ones that get it regardless of their relative size. Which in this case is characterised by their degree of total productive efficiency. However, Hafer is not done yet, she also presents an infinite horizon game, meaning there is no stopping point, removing the idea that an agent may not have enough time to make having the land more productive. 
+
+\subsection{An Infinite Horizon Model and the Emergence of De Facto Property Rights}
+Using the same set up as she used for the continuous time game above Hafer posits that if we let the model operate over infinite time that in finite time there will emerge an equilibrium. This equilibrium will be characterised by a population of those that have land $L$ and a population of those that do not $N$, $|L|\leq|N|$. And the people without land will not try to appropriate the property of those that do. Therefore, within the model there will be absolute peace, hence Hafer's claim that de facto property rights will emerge. This flies in the face of traditionally Hobbesian theory. 
+\par
+At the start of the game nature selects a "fixed and finite" population of agents of the 2-dimensional type that we have previously observed in the continuous game above. Some of these competitors will be endowed with land and others will not. 
+In each period the population of $L$ will be matched with some random subset of the population of $N$. Since the there is a greater number of agents who do not hold any land there will be $|N|-|L|$ agents who do not get a chance to appropriate land, these agents will continue to produce good B. The conflicts themselves work identically to before.
+\par
+It is interesting however that the optimum strategy of the same agent may change from period to period based on whether or not they hold land. This is because whether an agent holds land or not will allow their competitor to derive a more accurate probability of their $k$. As an extension to this, agents with the same $k$ may have totally different strategies in the same period, based on whether they hold land or not. This bias in the opinion of an agent of their competitor if that competitor holds land is interpreted by Hafer as "a reputation for fierceness", eventually after enough periods the agents that still hold land will be likely to truly desire it and therefore their "reputation for fierceness" will be well earned. 
+\par
+This is an inverse version of Akerlof's market for lemons \cite{akerlof}, the incomplete information in the model leads to a probable overestimation of the amount that a landholder desires his land. However, in finite time, Hafer argues that the perceived fierceness of a competitor will dissuade anyone from attempting to appropriate their resource. It appears the incumbent will certainly win, and consequently, the opportunity cost of the attempt is too high. The respect that the population of $N$ have of the security of the property of $L$, means that the equilibrium is entirely peaceful.
+\par
+Refocusing on the subject of this dissertation, as before with Hafer's model there's little real-world disadvantage to having an absolute disadvantage in production when it comes to the ability of an agent to appropriate the resource of another. Given the setup it is worth noting that if our agent is as small as it can be, that due to the conditions imposed on $a,b,c,d$ they are going to prefer to have land, hence my assumption that conflictual success is optimal. All that matters in the battle over the land is the ratio $k$. In this dissertation I have characterised many heterogenous interactions as warlike. When talking explicitly about warfare as the primary tool of appropriation used by competitors, it is of course optimal to be in a state of peaceable equilibrium. However, there are many examples of non-violent conflict that can benefit from a Hobbesian state of "perpetual war of everyman against everyman" as it drives innovation. 
+\par
+The emergence of, absolute, de facto property rights that are so strong that conflict is no longer attractive to any competitor is an equlibrium which has hithertoo evaded humankind. Although the distrobution of land is not perfectly efficient, the fact that no time is wasted on conflict means that productivity will be very high. Therefore, and this is morally obvious, a state of no-conflict is highly desirable.
+
+\section{Possible Aspects of Future Research}
+Milton Friedman once made the argument that one should not judge a model by its assumptions but by its predictive power. He was referring to pool players not having access to the information of a physicist but making shots as if they did. Therefore, it was best to model them under the assumption that they played as if they did. Hafer posits that given her assumptions that the population of competitors will reach a stable equilibrium in finite time, one in which the security of one's property is absolute. If we look at the course of human history, it may be appealing to say that the frequency of warfare has in fact reduced and that we may in fact be headed towards a stable equilibrium. I would argue that this is not the case, we exist in a temporary state of peace at the moment, however in living memory is the largest war that humankind has ever seen. I believe that there is an aspect that is missing from Hafer's infinite horizon dynamic model that might more fully encapsulate the actions of humans. 
+\par
+Hafer makes the assumption that it is only those with no land that are allowed to fight against those who currently hold it in order to obtain it. A model in which everyone could fight everyone is likely end up with a situation that more closely resembles the world as we know it. There has been no empire in the history of Humanity that decided that it had conquered enough, Alexander the Great "wept for there were no more worlds to conquer". I believe that Hafer misuses the "reputation for fierceness". Human ambition means that this is rarely a trait that is used for securing one's property, instead it is traded on to conquer further. This is a concept that I believe would arise if the population of have's were allowed to fight amongst themselves. Limiting it in this way hermeneutically seals the model in to an equilibrium as at the moment it is merely a sorting mechanism.
+\section{Concluding Remarks}
+This dissertation has covered, in large part the literature concerning anarchic relationships (with no jointness in production). I have laid out several different models of anarchic systems, adapting them slightly from the originals to make sure that they adhered more robustly to Hirschleifer's original characterisation of anarchy, to which I deferred from the beginning. Making assumptions about the relative size of the opponents and the mass effect parameter, along with setting the $s$ coefficient equal to zero, I was able to derive some tactical conclusions from the models for small teams faced with different scenarios. 
+\par
+The main differences between the models were whether the were operating in continuous or discrete time and whether the property of the agent was immune from capture. The resounding message from the discrete time cases, concerned with appropriative action as opposed to wars of attrition was that the smaller dynasty was better served by acting in an entirely appropriative way if they experienced some form of de facto property rights. If their property was of interest to the competing dynasty then (dependant on quite how small they are in comparison) they were better off deterring predation entirely, again bestowing upon themselves de facto property rights. 
+\par 
+The idea of wars of attrition as auctions completely changes the way we were looking at conflictual activity, in making it a drain on productivity instead of a source of income. Sacrificing time to obtain land and the ensuing signalling process that leads to the "reputation for fierceness" act as a sorting mechanism for the parcels of land to make sure that they are distributed to the agents that want them the most. Unfortunately, this is not an efficient outcome as it is only the value of $k$ that matters and not the absolute value of productivity. However, it does sort it to the people who are most likely to fight for it and therefore signals to everyone without land that it is not worth fighting for, assuring de facto property rights and therefore no more war implying that maximum time is placed into production, even if the production itself is sub optimal. Thus, my conclusion, across all of these models there is only one constant factor that leads to success for the smaller, poorer agent: assuring that your possessions are either safe from capture or cannot be appropriated, either because they aren't exploitable, or you've protected them sufficiently that their safety is assured. Once this goal has been achieved all other activities are a matter of solving a basic optimization problem that is dependent on the specific situation. It is interesting therefore, that possibly the greatest military thinker in history, von Clausewitz, who's theory of war as an extension to politics and economics changed the way the world thought of conflict, arrived at the same conclusion. His first principle, from his treatise \emph{Principles of War} was: to establish a secure base, only then can one advance with freedom of action \cite{principles}.
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{thebibliography}{99}
+
+\bibitem{axlerod} 
+R.Axlerod, R.O.Keohane
+\textit{Achieving Cooperation under Anarchy: Strategies and Institutions}
+World Politics , Oct., 1985, Vol. 38, No. 1 (Oct., 1985), pp. 226-254
+
+\bibitem{hirschleiferab} 
+J.Hirschleifer,
+\textit{Anarchy and Its Breakdown}
+Journal of Political Economy, pp.26-52
+
+\bibitem{grossmana}
+H.Grossman, M.Kim
+\textit{Predation and Accumulation}
+Journal of Economic Growth, 1: 333-350 (September 1996) 
+
+
+\bibitem{hirschleiferpop} 
+J.Hirschleifer,
+\textit{The Paradox of Power}
+Economics and PoliticsVolume 3, Issue 3 p. 177-200
+
+
+\bibitem{grossmanp}
+H.Grossman, M.Kim
